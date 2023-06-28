@@ -1,2 +1,10 @@
 cmake-build-debug
 .idea
+CMakeFiles
+cmake_install.cmake
+**/*.a
+**/*.so
+**/*.x
+Makefile
+CMakeCache.txt
+Testing

@@ -1,9 +1,9 @@
 #include <stdio.h>
 
-extern void hello(char *);
+extern void hello_(const char **);
 
 int main() {
-    char* target = "World!";
-    hello(&target);
+    const char* target = "World!";
+    hello_(&target);
     return 0;
 }

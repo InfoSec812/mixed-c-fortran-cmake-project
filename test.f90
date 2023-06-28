@@ -1,6 +1,4 @@
 FUNCTION HELLO (A)
-    PRINT "Hello "
-    PRINT A
-    PRINT "\n"
+    PRINT *, "Hello ", A, "\n"
     RETURN
-END
+END FUNCTION
