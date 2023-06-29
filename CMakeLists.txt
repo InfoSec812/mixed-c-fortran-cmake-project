@@ -9,10 +9,6 @@ if(CMAKE_Fortran_COMPILER_ID MATCHES Intel)
     set(CMAKE_Fortran_FLAGS         "${CMAKE_Fortran_FLAGS} -nofor-main -Wa")
     set(CMAKE_Fortran_FLAGS_DEBUG   "-g -traceback")
     set(CMAKE_Fortran_FLAGS_RELEASE "-O3 -ip -xHOST")
-
-    include_directories(
-            ~/intel/oneapi/compiler/latest/linux/compiler/include/
-    )
 endif()
 if(CMAKE_Fortran_COMPILER_ID MATCHES GNU)
     set(CMAKE_Fortran_FLAGS         "${CMAKE_Fortran_FLAGS}  -Wall")
@@ -20,18 +16,11 @@ if(CMAKE_Fortran_COMPILER_ID MATCHES GNU)
     set(CMAKE_Fortran_FLAGS_RELEASE "-Ofast -march=native")
 endif()
 
-add_library(
-    hello
-    test.f90
-)
-
 add_executable(
     c_fortran_example.x
     test.f90
     main.c
 )
-
-link_libraries("-static")
 
 target_link_libraries(
     c_fortran_example.x -static
