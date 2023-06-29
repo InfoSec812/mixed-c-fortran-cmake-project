@@ -1,12 +1,12 @@
-#include <stdio.h>
 #include <string.h>
-#include "ISO_Fortran_binding.h"
 
+// Define the interface for the FORTRAN 'hello' subroutine
 extern void hello(char [], size_t);
 
 int main() {
     char target[] = "World!";
 
+    // Call the FORTRAN function
     hello(target, strlen(target));
     return 0;
 }
