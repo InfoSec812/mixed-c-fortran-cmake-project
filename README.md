@@ -12,7 +12,7 @@
       * Debian/Ubuntu: `sudo apt install -y libgfortran-10-dev` (Replace 10 with a different version if desired)
 * You **MUST** install the statically linkable version of `glibc`
   * On Fedora/RHEL/CentOS - `sudo dnf install -y glibc-static`
-  * Debian/Ubuntu - `sudo apt-get install glibc-static`
+  * Debian/Ubuntu - `sudo apt install glibc-static`
 * You **MAY** need to set the following environment variables
   * `FC=/path/to/fortran/compiler`
   * `CMAKE_Fortran_COMPILER=/path/to/fortran/compiler`
