@@ -1,5 +1,6 @@
 MODULE H
-    USE, INTRINSIC :: iso_c_binding, only : c_char, c_int, c_float, c_size_t, c_ptr, c_f_pointer
+    USE, INTRINSIC :: iso_c_binding, only : c_char, c_null_char, c_size_t
+    USE, INTRINSIC :: iso_fortran_env, only: IK => int32
 
     IMPLICIT none
 
@@ -9,9 +10,11 @@ MODULE H
 
 CONTAINS
 
-    SUBROUTINE HELLO (A) bind(C, name="hello")
-        CHARACTER(len=*), intent(in) :: A
-        PRINT "(A,A)", "Hello ", A
+    SUBROUTINE HELLO (string, length) bind(C, name="hello")
+        integer(c_size_t), intent(in), value            :: length
+        character(len=1, kind=C_char), intent(in)       :: string(length)
+        integer(IK)                                     :: i
+        WRITE(*, "(*(g0))") "Hello ", (string(i),i=1,length)
         RETURN
     END SUBROUTINE
 
