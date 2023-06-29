@@ -9,3 +9,4 @@ Makefile
 CMakeCache.txt
 Testing
 /h.mod
+.cmake
