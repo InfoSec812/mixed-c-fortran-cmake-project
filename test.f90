@@ -10,11 +10,11 @@ MODULE H
 
 CONTAINS
 
-    SUBROUTINE HELLO (string, length) bind(C, name="hello")
-        integer(c_size_t), intent(in), value            :: length
-        character(len=1, kind=C_char), intent(in)       :: string(length)
-        integer(IK)                                     :: i
-        WRITE(*, "(*(g0))") "Hello ", (string(i),i=1,length)
+    SUBROUTINE HELLO (string, length) bind(C, name="hello") ! Bind this subroutine to the C compatible function name "hello"
+        integer(c_size_t), intent(in), value            :: length           ! Define our C parameter for the string length
+        character(len=1, kind=C_char), intent(in)       :: string(length)   ! Define our C paramter for the string
+        integer(IK)                                     :: i                ! Define a loop iterator variable
+        WRITE(*, "(*(g0))") "Hello ", (string(i),i=1,length) ! Write to STDOUT only until the length of the string.
         RETURN
     END SUBROUTINE
 
