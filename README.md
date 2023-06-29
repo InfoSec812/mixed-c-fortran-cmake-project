@@ -7,6 +7,9 @@
     * When using the Intel Compilers, you need to set the correct environment variables:
       * `source /path/to/intel/oneapi/setvars.sh --force`
   * [GNU FORTRAN](https://gcc.gnu.org/fortran/)
+    * You will also need the static linking libraries for FORTRAN
+      * Fedora/RHEL: `sudo dnf install -y libgfortran-static`
+      * Debian/Ubuntu: `sudo apt install -y libgfortran-10-dev` (Replace 10 with a different version if desired)
 * You **MUST** set the following environment variables
   * `FC=/path/to/fortran/compiler`
   * `CMAKE_Fortran_COMPILER=/path/to/fortran/compiler`
