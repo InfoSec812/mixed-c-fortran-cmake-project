@@ -19,4 +19,3 @@
 * `cd /path/to/project/root`
 * `cmake .`
 * `make`
-
